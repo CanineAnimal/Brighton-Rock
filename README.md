@@ -15,7 +15,7 @@ This script should be added as a userscript on Tampermonkey. To install, follow 
 
 # Usage
 
-To use, go to any page on NationStates with the "?peaceinvasionator=1" URL string, for example [https://www.nationstates.net/page=factions?peaceinvasionator=1][(https://www.nationstates.net/page=factions?peaceinvasionator=1). Complete entering your nation names and passwords to register your puppets (NB: Passwords are stored only in local storage, and therefore cannot be viewed outside of your device. Press the "C" key to clear this data.).
+To use, go to any page on NationStates and complete entering your nation names and passwords to register your puppets, should the prompt appear (NB: Passwords are stored only in local storage, and therefore cannot be viewed outside of your device. Press the "C" key to clear this data.).
 
 Press "F" to view the GD faction.
 
