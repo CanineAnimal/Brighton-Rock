@@ -30,24 +30,22 @@
         var originalTime = (new Date()).getTime();
         while(ask){
             var str = prompt('Please enter your nation/puppet name. Follow it with the string ~/fin if you have inserted all your puppets/nations you will be using for N-Day. Enter the same string without any preceding text if you forgot to enter the string with your last puppet. To enter multiple nations, separate them with a comma character.').toLowerCase().replaceAll(' ', '_');
-            var request = new XMLHttpRequest;
             if(str.indexOf('~/fin') == str.length - 5){
                 ask = false;
             }
             if(str != '~/fin'){
-                alert('No nation by this name exists.');
                 var pass = ('Insert password/s')
                 for(var ptem = 0; ptem < str.split('~/')[0].split(',').length; ptem++){
                     var request = new XMLHttpRequest();
                     request.open('GET', 'https://www.nationstates.net/cgi-bin/api.cgi?nation=' + str.split('~/')[0].split(',')[ptem], false);
-                    while(originalTime > ((new Date()).getTime() + 600)){};
+                    while(originalTime > ((new Date()).getTime() + 6560)){};
                     request.send();
-                    originalTime = new Date();
+                    originalTime = (new Date()).getTime();
                     if(request.status == 404 || request.status == 400){
+                        alert('No nation ' + str.split('~/')[0].split(',')[ptem] + ' exists.')
+                    }else{
                         puppets[puppets.length] = str.split('~/')[0].split(',')[ptem];
                         passwords[passwords.length] = pass.split(',')[ptem];
-                    }else{
-                        alert('No nation ' + str.split('~/')[0].split(',')[ptem] + ' exists.')
                     }
                 }
             }
