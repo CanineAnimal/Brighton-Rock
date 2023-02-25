@@ -22,7 +22,7 @@ Press "L" while viewing the GD faction to leave.
 To spend production,
 
 1) Press "P" to view production.
-2) Press "G" to generate nukes or shields from production.
+2) Press "P" again to generate nukes or shields from production.
 3) Press "S" to switch to your next puppet.
 4) Repeat from 1.
 
