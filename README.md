@@ -43,3 +43,13 @@ To attack a faction, first press "V" once to select a faction to target (you wil
 1) Press "V" again to view said faction's nations.
 2) Press "A" each few seconds until the targeting page for a nation from said faction is loaded.
 3) Press "T" to lodge a target upon said nation.
+4) Press "S" to shift to your next nation.
+5) Repeat from 1.
+
+Note that when viewing a page for targeting nukes, the S key will automatically take you only to your next nation with nukes.
+
+To launch nukes on a nation,
+1) Press "U" to view nations you have targeted.
+2) Press "U" repeatedly again to launch said targets, until all targets are launched.
+3) Press "S" to switch to your next nation.
+4) Repeat from 1.
