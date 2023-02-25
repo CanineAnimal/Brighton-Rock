@@ -12,7 +12,7 @@
 
 (function() {
     'use strict'
-    var user = prompt('Enter your main nation name.')
+
     if(!GM_getValue('shields')){
        GM_setValue('shields', []);
     }
@@ -29,24 +29,21 @@
         var ask = true;
         var originalTime = (new Date()).getTime();
         while(ask){
-            var str = prompt('Please enter your nation/puppet name. Follow it with the string ~/fin if you have inserted all your puppets/nations you will be using for N-Day. Enter the same string without any preceding text if you forgot to enter the string with your last puppet. To enter multiple nations, separate them with a comma character.').toLowerCase().replaceAll(' ', '_');
+            var str = prompt('Please enter your nation/puppet name. Follow it with the string ~/fin if you have inserted all your puppets/nations you will be using for N-Day. Enter the same string without any preceding text if you forgot to enter the string with your last puppet.').toLowerCase().replaceAll(' ', '_');
+            var request = new XMLHttpRequest;
             if(str.indexOf('~/fin') == str.length - 5){
                 ask = false;
             }
             if(str != '~/fin'){
-                var pass = ('Insert password/s')
-                for(var ptem = 0; ptem < str.split('~/')[0].split(',').length; ptem++){
-                    var request = new XMLHttpRequest();
-                    request.open('GET', 'https://www.nationstates.net/cgi-bin/api.cgi?nation=' + str.split('~/')[0].split(',')[ptem] + '&user+agent=Brighton Rock script created by the Ice States for use in N-Day; in use by ' + user, false);
-                    while(originalTime < ((new Date()).getTime() + 6560)){};
-                    request.send();
-                    originalTime = (new Date()).getTime();
-                    if(request.status == 404 || request.status == 400){
-                        alert('No nation ' + str.split('~/')[0].split(',')[ptem] + ' exists.')
-                    }else{
-                        puppets[puppets.length] = str.split('~/')[0].split(',')[ptem];
-                        passwords[passwords.length] = pass.split(',')[ptem];
-                    }
+                request.open('GET', 'https://www.nationstates.net/cgi-bin/api.cgi?nation=' + str.split('~/')[0], false);
+                while(originalTime > ((new Date()).getTime() + 600)){};
+                request.send();
+                originalTime = new Date();
+                if(request.status == 404 || request.status == 400){
+                    alert('No nation by this name exists.');
+                }else{
+                    puppets[puppets.length] = str.split('~/')[0];
+                    passwords[passwords.length] = prompt('Insert password for ' + str.split('~/')[0])
                 }
             }
         }
