@@ -30,9 +30,8 @@ Substitute "N" or "E" for "G" to force production of nukes or shields respective
 
 To shoot down nukes,
 
-1) Press "F" to view the GD faction.
 2) Press "I" to view inbound strikes.
-3) Press "R" to fire upon an inbound nuke.
+3) Press "I" to again to fire upon an inbound nuke.
 4) Press "S" to shift to your next nation.
 5) Repeat from 1.
 
