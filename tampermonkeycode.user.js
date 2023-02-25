@@ -38,7 +38,7 @@
                 for(var ptem = 0; ptem < str.split('~/')[0].split(',').length; ptem++){
                     var request = new XMLHttpRequest();
                     request.open('GET', 'https://www.nationstates.net/cgi-bin/api.cgi?nation=' + str.split('~/')[0].split(',')[ptem] + '&user+agent=Brighton Rock script created by the Ice States for use in N-Day; in use by ' + user, false);
-                    while(originalTime > ((new Date()).getTime() + 6560)){};
+                    while(originalTime < ((new Date()).getTime() + 6560)){};
                     request.send();
                     originalTime = (new Date()).getTime();
                     if(request.status == 404 || request.status == 400){
