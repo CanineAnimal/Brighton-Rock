@@ -233,14 +233,14 @@
                         location.href += '?start=50'
                     }else{
                         GM_setValue('page', Number.parseInt(location.href.split('?start=')[1]) + 50);
-                        location.href = location.href.split('?start=')[0] + (Number.parseInt(location.href.split('?start=')[1]) + 50)
+                        location.href = location.href.split('?start=')[0] + '?start=' + (Number.parseInt(location.href.split('?start=')[1]) + 50)
                     }
                     break
                 case 84:
                     var v = Number.parseInt(document.querySelector('a.nukestat[title=Radiation]').innerText.split('%')[0]) + Number.parseInt(document.querySelector('a.nukestat[title=Targeted]').innerText.split('\n')[0]) + Number.parseInt(document.querySelector('a.nukestat[title=Incoming]').innerText.split('\n')[0])
                     if(v > 150){
                         GM_setValue('page', GM_getValue('page') + 50);
-                        location.href = location.href.split('?start=')[0] + GM_getValue('page');
+                        location.href = 'https://www.nationstates.net/page=faction/fid=410?start=' + GM_getValue('page');
                     }else{
                         document.querySelector('.button[name="nukes"]').click();
                     }
