@@ -7,7 +7,7 @@ This script should be added as a userscript on Tampermonkey. To install, follow 
 
 2) Go to the following link: [https://canineanimal.github.io/Brighton-Rock/tampermonkeycode.user.js](https://canineanimal.github.io/Brighton-Rock/tampermonkeycode.user.js).
 
-4) Save the code, using Ctrl+S.
+4) Press the "Install" button in the new tab which will open.
 
 # Usage
 
