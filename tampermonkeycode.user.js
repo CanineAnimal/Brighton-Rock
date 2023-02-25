@@ -35,17 +35,20 @@
                 ask = false;
             }
             if(str != '~/fin'){
-                request.open('GET', 'https://www.nationstates.net/cgi-bin/api.cgi?nation=' + str.split('~/')[0], false);
-                while(originalTime > ((new Date()).getTime() + 600)){};
-                request.send();
-                originalTime = new Date();
-                if(request.status == 404 || request.status == 400){
-                    alert('No nation by this name exists.');
-                }else{
-                    var pass = ('Insert password/s')
-                    for(var ptem = 0; ptem < str.split('~/')[0].length; ptem++){
+                alert('No nation by this name exists.');
+                var pass = ('Insert password/s')
+                for(var ptem = 0; ptem < str.split('~/')[0].split(',').length; ptem++){
+                    var request = new XMLHttpRequest();
+                    request.open('GET', 'https://www.nationstates.net/cgi-bin/api.cgi?nation=' + str.split('~/')[0].split(',')[ptem], false);
+                    while(originalTime > ((new Date()).getTime() + 600)){};
+                    request.send();
+                    originalTime = new Date();
+                    if(request.status == 404 || request.status == 400){
                         puppets[puppets.length] = str.split('~/')[0].split(',')[ptem];
                         passwords[passwords.length] = pass.split(',')[ptem];
+                    }else{
+                        alert('No nation ' + str.split('~/')[0].split(',')[ptem] + ' exists.')
+                    }
                 }
             }
         }
